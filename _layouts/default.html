@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }} · {% endif %}Dmitri Spiro</title>
+  <meta name="description" content="Data Engineer & Analytics Professional, newsletter creator, and builder of tools for analysts." />
+  <meta name="author" content="Dmitri Spiro" />
+  <meta property="og:title" content="Dmitri Spiro" />
+  <meta property="og:description" content="Data Engineer & Analytics Professional, newsletter creator, and builder of tools for analysts." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dmitrispiro.com" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.scss' | relative_url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">Dmitri Spiro</a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#writing">Writing</a>
+      <a href="#subscribe">Newsletter</a>
+    </div>
+  </nav>
+
+  {{ content }}
+
+  <footer class="footer">
+    <span class="footer-name">© {{ 'now' | date: "%Y" }} Dmitri Spiro</span>
+    <div class="footer-links">
+      <a href="https://github.com/Djonathon" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/dmitrispiropoulos/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://medium.com/@dev-djon" target="_blank" rel="noopener">Medium</a>
+      <a href="https://www.plotstack.dev/" target="_blank" rel="noopener">PlotStack</a>
+    </div>
+  </footer>
+
+</body>
+</html>

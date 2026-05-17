@@ -1,0 +1,14 @@
+title: Dmitri Spiro
+description: Data Engineer & Analytics Professional · Newsletter Creator · Builder
+url: "https://Djonathon.github.io"
+baseurl: ""
+author: Dmitri Spiro
+email: ""
+
+plugins:
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+
+markdown: kramdown
