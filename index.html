@@ -105,7 +105,7 @@ layout: default
 <!-- WRITING -->
 <section class="section" id="writing">
   <p class="section-label">Recent Writing</p>
-  <div class="writing-list">
+  <div class="writing-list" id="writing-list">
 
     <a href="https://www.plotstack.dev/" target="_blank" rel="noopener" class="writing-item">
       <span class="writing-platform">PlotStack</span>
@@ -133,6 +133,48 @@ layout: default
 
   </div>
 </section>
+
+<script>
+(function () {
+  var feeds = [
+    { url: 'https://rss.beehiiv.com/feeds/pub_f7b914f3-a7b2-45e2-8f63-93aaa8821f1d.xml', platform: 'PlotStack' },
+    { url: 'https://medium.com/feed/@dev-djon', platform: 'Medium' }
+  ];
+
+  function strip(html) {
+    return html ? html.replace(/<[^>]+>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').trim() : '';
+  }
+
+  function fetchFeed(feed) {
+    return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed.url))
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        return (data.items || []).map(function (item) {
+          return { platform: feed.platform, title: strip(item.title), link: item.link, pubDate: item.pubDate, desc: strip(item.description).slice(0, 120) };
+        });
+      })
+      .catch(function () { return []; });
+  }
+
+  Promise.all(feeds.map(fetchFeed)).then(function (results) {
+    var items = [].concat.apply([], results)
+      .sort(function (a, b) { return new Date(b.pubDate) - new Date(a.pubDate); })
+      .slice(0, 5);
+
+    if (!items.length) return;
+
+    var container = document.getElementById('writing-list');
+    container.innerHTML = items.map(function (item) {
+      var desc = item.desc.length === 120 ? item.desc + '…' : item.desc;
+      return '<a href="' + item.link + '" target="_blank" rel="noopener" class="writing-item">' +
+        '<span class="writing-platform">' + item.platform + '</span>' +
+        '<div><p class="writing-title">' + item.title + '</p>' +
+        (desc ? '<p class="writing-desc">' + desc + '</p>' : '') +
+        '</div></a>';
+    }).join('');
+  });
+}());
+</script>
 
 <!-- SUBSCRIBE -->
 <div class="subscribe-block" id="subscribe">
