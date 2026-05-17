@@ -157,9 +157,14 @@ layout: default
   }
 
   Promise.all(feeds.map(fetchFeed)).then(function (results) {
-    var items = [].concat.apply([], results)
-      .sort(function (a, b) { return new Date(b.pubDate) - new Date(a.pubDate); })
-      .slice(0, 5);
+    // Interleave feeds so both always appear: PS, Med, PS, Med, PS
+    var interleaved = [];
+    for (var i = 0; i < 3; i++) {
+      results.forEach(function (feedItems) {
+        if (feedItems[i]) interleaved.push(feedItems[i]);
+      });
+    }
+    var items = interleaved.slice(0, 5);
 
     if (!items.length) return;
 
