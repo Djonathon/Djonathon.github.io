@@ -255,12 +255,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .section-label {
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--slate-light);
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
 }
 
 /* PROJECTS */
@@ -380,6 +382,12 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.5;
 }
 
+.writing-date {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
 /* SUBSCRIBE */
 .subscribe-block {
   background: var(--slate-deep);
@@ -450,7 +458,8 @@ a { color: inherit; text-decoration: none; }
 
 /* FOOTER */
 .footer {
-  background: var(--slate-deep);
+  background: var(--bg);
+  border-top: 1px solid var(--border);
   padding: 1.75rem 2.5rem;
   display: flex;
   justify-content: space-between;
@@ -459,7 +468,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-name {
-  color: var(--slate-pale);
+  color: var(--text-muted);
   font-size: 13px;
 }
 
@@ -469,12 +478,12 @@ a { color: inherit; text-decoration: none; }
 }
 
 .footer-links a {
-  color: var(--slate-pale);
+  color: var(--text-secondary);
   font-size: 13px;
   transition: color 0.2s;
 }
 
-.footer-links a:hover { color: var(--bg); }
+.footer-links a:hover { color: var(--slate-deep); }
 
 /* ANIMATIONS */
 @keyframes fadeIn {
@@ -497,6 +506,6 @@ a { color: inherit; text-decoration: none; }
   .divider { margin: 0 1.25rem; }
   .subscribe-block { margin: 1.5rem 1.25rem; }
   .subscribe-form { flex-direction: column; }
-  .footer { padding: 1.25rem; flex-direction: column; gap: 1rem; text-align: center; }
+  .footer { padding: 1.25rem 1.25rem; flex-direction: column; gap: 1rem; text-align: center; }
   .projects-grid { grid-template-columns: 1fr; }
 }

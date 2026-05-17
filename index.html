@@ -80,7 +80,7 @@ layout: default
     </a>
 
     <a href="https://subscribepage.io/cXGdho" target="_blank" rel="noopener" class="project-card">
-      <p class="project-tag">Free Templates</p>
+      <p class="project-tag">Templates</p>
       <h2 class="project-name">Power BI Templates</h2>
       <p class="project-desc">A collection of free Power BI templates — built as a resource for PlotStack readers and analysts who want a head start.</p>
       <span class="project-link">Gallery →</span>
@@ -103,11 +103,9 @@ layout: default
   </div>
 </section>
 
-<div class="divider"></div>
-
 <!-- WRITING -->
 <section class="section" id="writing">
-  <p class="section-label">Recent Writing</p>
+  <p class="section-label">Recent Articles & Issues</p>
   <div class="writing-list" id="writing-list">
 
     <a href="https://www.plotstack.dev/p/issue-30-the-altitude-problem-most-people-get-wrong-in-analytics" target="_blank" rel="noopener" class="writing-item">
@@ -115,6 +113,7 @@ layout: default
       <div>
         <p class="writing-title">Issue #30: The Altitude Problem Most People Get Wrong in Analytics</p>
         <p class="writing-desc">Why your audience determines how much detail belongs in a data presentation.</p>
+        <p class="writing-date">May 11, 2026</p>
       </div>
     </a>
 
@@ -123,6 +122,7 @@ layout: default
       <div>
         <p class="writing-title">What happens to your automations when you die?</p>
         <p class="writing-desc">When AI automation outlives the human behind it.</p>
+        <p class="writing-date">Jan 25, 2026</p>
       </div>
     </a>
 
@@ -131,6 +131,7 @@ layout: default
       <div>
         <p class="writing-title">Issue #29: The Dashboard Was Right. The Frame Was Wrong.</p>
         <p class="writing-desc">What separates analysts who deliver dashboards from those who challenge them.</p>
+        <p class="writing-date">Apr 27, 2026</p>
       </div>
     </a>
 
@@ -139,6 +140,7 @@ layout: default
       <div>
         <p class="writing-title">5 Simple Power BI Features That Instantly Improve User Experience</p>
         <p class="writing-desc">Anyone can implement these today — complete code and report available for download.</p>
+        <p class="writing-date">Jan 12, 2026</p>
       </div>
     </a>
 
@@ -147,6 +149,7 @@ layout: default
       <div>
         <p class="writing-title">Issue #28: The Difference Between a Good Analyst and a Great One Isn't the Skills</p>
         <p class="writing-desc">What separates professionals who grow from ones who plateau.</p>
+        <p class="writing-date">Apr 13, 2026</p>
       </div>
     </a>
 
@@ -164,12 +167,17 @@ layout: default
     return html ? html.replace(/<[^>]+>/g, '').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').trim() : '';
   }
 
+  function formatDate(str) {
+    var d = new Date(str);
+    return isNaN(d) ? '' : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
   function fetchFeed(feed) {
     return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed.url))
       .then(function (r) { return r.json(); })
       .then(function (data) {
         return (data.items || []).map(function (item) {
-          return { platform: feed.platform, title: strip(item.title), link: item.link, pubDate: item.pubDate, desc: strip(item.description).slice(0, 120) };
+          return { platform: feed.platform, title: strip(item.title), link: item.link, pubDate: item.pubDate, date: formatDate(item.pubDate), desc: strip(item.description).slice(0, 120) };
         });
       })
       .catch(function () { return []; });
@@ -194,6 +202,7 @@ layout: default
         '<span class="writing-platform">' + item.platform + '</span>' +
         '<div><p class="writing-title">' + item.title + '</p>' +
         (desc ? '<p class="writing-desc">' + desc + '</p>' : '') +
+        (item.date ? '<p class="writing-date">' + item.date + '</p>' : '') +
         '</div></a>';
     }).join('');
   });
