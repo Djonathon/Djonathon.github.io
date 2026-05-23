@@ -10,32 +10,36 @@
   <meta property="og:description" content="Data Engineer & Analytics Professional, newsletter creator, and builder of tools for analysts." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://dmitrispiro.com" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=5" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
 <body>
 
-  <nav class="nav">
-    <a href="{{ '/' | relative_url }}" class="nav-brand">Dmitri Spiropoulos</a>
-    <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#writing">Writing</a>
-      <a href="#subscribe">Newsletter</a>
-    </div>
-  </nav>
+  <div class="page-frame">
 
-  {{ content }}
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}" class="nav-brand">Dmitri Spiropoulos</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#subscribe">Newsletter</a>
+      </div>
+    </nav>
 
-  <footer class="footer">
-    <span class="footer-name">© {{ 'now' | date: "%Y" }} Dmitri Spiropoulos</span>
-    <div class="footer-links">
-      <a href="https://github.com/Djonathon" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://www.linkedin.com/in/dmitrispiropoulos/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://medium.com/@dev-djon" target="_blank" rel="noopener">Medium</a>
-      <a href="https://www.plotstack.dev/" target="_blank" rel="noopener">PlotStack</a>
-    </div>
-  </footer>
+    {{ content }}
+
+    <footer class="footer">
+      <span class="footer-name">© {{ 'now' | date: "%Y" }} Dmitri Spiropoulos</span>
+      <div class="footer-links">
+        <a href="https://github.com/Djonathon" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/dmitrispiropoulos/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@dev-djon" target="_blank" rel="noopener">Medium</a>
+        <a href="https://www.plotstack.dev/" target="_blank" rel="noopener">PlotStack</a>
+      </div>
+    </footer>
+
+  </div>
 
   <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
