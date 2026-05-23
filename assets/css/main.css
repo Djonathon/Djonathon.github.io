@@ -506,10 +506,11 @@ a { color: inherit; text-decoration: none; }
   background: var(--slate-deep);
   margin: 2rem 2.5rem 0;
   border-radius: var(--radius-lg);
-  padding: 2rem 2rem 0.75rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
