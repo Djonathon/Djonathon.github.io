@@ -227,6 +227,24 @@ a { color: inherit; text-decoration: none; }
   margin-top: 12px;
 }
 
+.featured-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.featured-stars {
+  color: #FBBC05;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.featured-rating-label {
+  font-size: 13px;
+  color: #8AAAC0;
+}
+
 .featured-actions {
   display: flex;
   gap: 10px;
