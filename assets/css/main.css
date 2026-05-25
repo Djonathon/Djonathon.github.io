@@ -663,15 +663,16 @@ a { color: inherit; text-decoration: none; }
 .sponsor-btn-primary {
   font-size: 13px;
   font-weight: 500;
-  color: var(--bg);
-  background: var(--slate-deep);
-  padding: 8px 18px;
-  border-radius: 20px;
+  color: var(--slate-deep);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0;
   white-space: nowrap;
   transition: opacity 0.2s;
 }
 
-.sponsor-btn-primary:hover { opacity: 0.8; }
+.sponsor-btn-primary:hover { opacity: 0.6; }
 
 .sponsor-btn-secondary {
   font-size: 12px;
