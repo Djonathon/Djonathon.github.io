@@ -18,7 +18,7 @@
     gtag('js', new Date());
     gtag('config', 'G-WK19KK3WQM');
   </script>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=13" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=14" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 </head>
@@ -27,13 +27,27 @@
   <div class="page-frame">
 
     <nav class="nav">
-      <a href="{{ '/' | relative_url }}" class="nav-brand">Dmitri Spiropoulos</a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#writing">Writing</a>
-        <a href="#subscribe">Newsletter</a>
+      <a href="{{ '/' | relative_url }}" class="nav-brand">Dmitri Spiropoulos <span class="nav-location">📍 Los Angeles, CA</span><span class="nav-updated">🗓 Last Updated: {{ 'now' | date: "%b %Y" }}</span></a>
+      <div class="nav-clock">
+        <span class="nav-clock-time" id="nav-clock-time"></span>
+        <span class="nav-clock-label">PT</span>
       </div>
     </nav>
+    <script>
+      (function () {
+        function tick() {
+          var now = new Date().toLocaleTimeString('en-US', {
+            timeZone: 'America/Los_Angeles',
+            hour: 'numeric', minute: '2-digit', second: '2-digit',
+            hour12: true
+          });
+          var el = document.getElementById('nav-clock-time');
+          if (el) el.textContent = now;
+        }
+        tick();
+        setInterval(tick, 1000);
+      }());
+    </script>
 
     {{ content }}
 
