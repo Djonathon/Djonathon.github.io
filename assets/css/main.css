@@ -134,10 +134,10 @@ img { max-width: 100%; display: block; }
    ============================================================ */
 .fx { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
 .fx .bw { position: absolute; inset: 0; will-change: transform; }
-.fx .bw1 { transform: translate3d(calc(var(--mx,0) * 52px),  calc(var(--my,0) * 52px),  0); }
-.fx .bw2 { transform: translate3d(calc(var(--mx,0) * -34px), calc(var(--my,0) * -34px), 0); }
-.fx .bw3 { transform: translate3d(calc(var(--mx,0) * 38px),  calc(var(--my,0) * 38px),  0); }
-.fx .bw4 { transform: translate3d(calc(var(--mx,0) * -48px), calc(var(--my,0) * -48px), 0); }
+.fx .bw1 { transform: translate3d(calc(var(--mx,0) * 90px),  calc(var(--my,0) * 90px),  0); }
+.fx .bw2 { transform: translate3d(calc(var(--mx,0) * -65px), calc(var(--my,0) * -65px), 0); }
+.fx .bw3 { transform: translate3d(calc(var(--mx,0) * 75px),  calc(var(--my,0) * 75px),  0); }
+.fx .bw4 { transform: translate3d(calc(var(--mx,0) * -80px), calc(var(--my,0) * -80px), 0); }
 .fx .blob {
   position: absolute; border-radius: 50%;
   filter: blur(46px);
@@ -159,10 +159,10 @@ img { max-width: 100%; display: block; }
   opacity: calc(var(--bg-intensity) * .7);
   animation: drift4 22s var(--ease) infinite alternate; }
 
-@keyframes drift1 { from { transform: translate(-14%,-10%) scale(1); } to { transform: translate(22%,16%) scale(1.25); } }
-@keyframes drift2 { from { transform: translate(14%,4%) scale(1.08); } to { transform: translate(-24%,22%) scale(.85); } }
-@keyframes drift3 { from { transform: translate(-6%,4%) scale(1); } to { transform: translate(28%,-16%) scale(1.28); } }
-@keyframes drift4 { from { transform: translate(10%,12%) scale(1); } to { transform: translate(-20%,-18%) scale(1.22); } }
+@keyframes drift1 { from { transform: translate(-28%,-22%) scale(1); } to { transform: translate(38%,30%) scale(1.35); } }
+@keyframes drift2 { from { transform: translate(26%,10%) scale(1.1); } to { transform: translate(-42%,36%) scale(.8); } }
+@keyframes drift3 { from { transform: translate(-14%,8%) scale(1); } to { transform: translate(46%,-30%) scale(1.38); } }
+@keyframes drift4 { from { transform: translate(20%,22%) scale(1); } to { transform: translate(-36%,-32%) scale(1.3); } }
 
 .fx .aurora { position: absolute; inset: -20%; display: none; opacity: var(--bg-intensity);
   background:
