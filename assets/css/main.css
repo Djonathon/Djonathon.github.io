@@ -260,8 +260,10 @@ img { max-width: 100%; display: block; }
 .hero-tracker {
   margin-top: clamp(26px, 3.4vw, 40px);
   width: 100%; max-width: 640px;
-  display: flex; align-items: center; flex-wrap: wrap;
-  gap: 10px 18px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px 18px;
   background:
     linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,0) 46%),
     color-mix(in oklab, var(--card) 46%, transparent);
@@ -307,7 +309,7 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-tracker .ht-row-sep {
-  flex-basis: 100%;
+  grid-column: 1 / -1;
   height: 1px;
   background: var(--line-soft);
   margin: 2px 0;
