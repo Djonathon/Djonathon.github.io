@@ -1,65 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-hero="mixed" data-bg="mesh" data-grain="on">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{% if page.title %}{{ page.title }} · {% endif %}Dmitri Spiropoulos</title>
-  <meta name="description" content="Data Engineer & Analytics Professional, newsletter creator, and builder of tools for analysts." />
-  <meta name="author" content="Dmitri Spiropoulos" />
-  <meta property="og:title" content="Dmitri Spiropoulos" />
-  <meta property="og:description" content="Data Engineer & Analytics Professional, newsletter creator, and builder of tools for analysts." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://dmitrispiro.com" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WK19KK3WQM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-WK19KK3WQM');
-  </script>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=17" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{% if page.title %}{{ page.title }} · {% endif %}Dmitri Spiropoulos</title>
+<meta name="description" content="I build tools that solve problems. Extensions, newsletters, dashboards, and whatever else comes next." />
+<meta name="author" content="Dmitri Spiropoulos" />
+<meta property="og:title" content="Dmitri Spiropoulos — Data thinking, product building" />
+<meta property="og:description" content="I build tools that solve problems. Extensions, newsletters, dashboards, and whatever else comes next." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dmitrispiro.com" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WK19KK3WQM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WK19KK3WQM');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 </head>
 <body>
-
-  <div class="page-frame">
-
-    <nav class="nav">
-      <a href="{{ '/' | relative_url }}" class="nav-brand"><span class="nav-location">📍 Los Angeles, CA</span><span class="nav-location">  <span id="nav-clock-time"></span> PT</span></a>
-      <span class="nav-spiro">Spiro</span>
-    </nav>
-    <script>
-      (function () {
-        function tick() {
-          var now = new Date().toLocaleTimeString('en-US', {
-            timeZone: 'America/Los_Angeles',
-            hour: 'numeric', minute: '2-digit', second: '2-digit',
-            hour12: true
-          });
-          var el = document.getElementById('nav-clock-time');
-          if (el) el.textContent = now;
-        }
-        tick();
-        setInterval(tick, 1000);
-      }());
-    </script>
-
-    {{ content }}
-
-    <footer class="footer">
-      <span class="footer-name">© {{ 'now' | date: "%Y" }} Dmitri Spiropoulos</span>
-      <div class="footer-links">
-        <a href="https://github.com/Djonathon" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/dmitrispiropoulos/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://medium.com/@dev-djon" target="_blank" rel="noopener">Medium</a>
-        <a href="https://www.plotstack.dev/" target="_blank" rel="noopener">PlotStack</a>
-      </div>
-    </footer>
-
-  </div>
-
-  <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+{{ content }}
 </body>
 </html>
