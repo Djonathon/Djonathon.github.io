@@ -435,6 +435,8 @@ img { max-width: 100%; display: block; }
 .post:hover .src .arr { color: var(--accent); transform: translate(3px,-3px); }
 @media (max-width: 720px){ .post { grid-template-columns: 1fr; gap: 8px; } .post .src { justify-self: start; } }
 
+#partner { padding: clamp(32px, 5vw, 64px) 0; }
+
 /* ---- CTA / PARTNER ---- */
 .cta { position: relative; overflow: hidden; border-radius: clamp(20px,3vw,34px); background: var(--bg-2); border: 1px solid var(--line); }
 .cta .inner { position: relative; z-index: 3; padding: clamp(40px,7vw,96px); text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -447,9 +449,19 @@ img { max-width: 100%; display: block; }
 .cta .fx .blob { opacity: calc(var(--bg-intensity) * .85); }
 
 /* ============================================================
+   SUBSCRIBE
+   ============================================================ */
+.subscribe-section { padding: 24px 0; }
+.subscribe-block {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
-.footer { padding: 64px 0 40px; border-top: 1px solid var(--line); margin-top: clamp(60px,9vw,120px); }
+.footer { padding: 64px 0 40px; border-top: 1px solid var(--line); margin-top: 32px; }
 .footer .row { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; align-items: flex-start; }
 .footer .brand .name { font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
 .footer .f-tag { display: block; color: var(--muted); margin-top: 8px; max-width: 30ch; font-size: .98rem; }
