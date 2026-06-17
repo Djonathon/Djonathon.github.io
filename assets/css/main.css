@@ -342,7 +342,7 @@ img { max-width: 100%; display: block; }
 
 .eyebrow.live::before,
 .eyebrow.no-dash::before { display: none; }
-.eyebrow.live .pulse {
+.eyebrow.live .pulse, .ps-live .pulse {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 60%, transparent);
@@ -481,6 +481,69 @@ img { max-width: 100%; display: block; }
 .cta .acts { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 .cta .stat { margin-top: 30px; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .cta .fx .blob { opacity: calc(var(--bg-intensity) * .85); }
+
+.ps-live {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.partner-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 32px;
+  padding: 18px 24px;
+  background: color-mix(in oklab, var(--card) 55%, transparent);
+  border: 1px solid color-mix(in oklab, var(--card) 70%, var(--line));
+  border-radius: var(--r);
+  backdrop-filter: blur(6px);
+}
+.ps-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 28px;
+}
+.ps-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--line-soft);
+  flex-shrink: 0;
+}
+.ps-val {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: -.03em;
+  color: var(--ink);
+  line-height: 1;
+}
+.ps-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ps-vs {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  color: color-mix(in oklab, var(--accent) 70%, var(--ink));
+  font-weight: 500;
+}
 
 /* ============================================================
    SUBSCRIBE
